@@ -31,6 +31,6 @@
           }
 
         .icon {
-            @apply absolute right-0 z-10 px-4 py-2 text-slate-800;
+            @apply absolute right-0 z-10 px-4 py-2 text-slate-400;
             }
     </style>

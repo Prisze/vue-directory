@@ -4,7 +4,7 @@
 
 <template>
   <div class="sub-wrapper">
-    <MainCardsSingle  />
+    <MainSegments v-for="n in 20" :key="n" />
   </div>
 </template>
 
