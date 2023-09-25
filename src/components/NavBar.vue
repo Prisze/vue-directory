@@ -3,7 +3,7 @@
 
   import { useAuth } from '@/composables/useAuth'
   const { isAuthenticated, logout, user } = useAuth()
-  
+
     const title = ref('📓 Vue Directory')
 </script>
 
@@ -15,9 +15,22 @@
         </RouterLink> 
         
         <div class="menu">
-          <a href="#" class="menu-item">Departments</a>
+            <a href="#" class="menu-item">Departments</a>
           <a href="#" class="menu-item">Settings</a>
           <a href="#" class="menu-login">Exit</a>
+          <p v-show="isAuthenticated" class="px-2 py-1">
+          Welcome back
+          <strong
+            ><i>{{ user.name }}</i></strong
+          >
+        </p>
+        <div v-if="isAuthenticated">
+          <RouterLink :to="{ name: 'Settings' }" href="#" class="menu-item">Settings</RouterLink>
+          <button class="menu-logout" @click="logout">Logout</button>
+        </div>
+        <div v-else>
+          <RouterLink :to="{ name: 'Login' }" href="#" class="menu-login">Login</RouterLink>
+        </div>
         </div>
       </div>
     </nav>
@@ -35,11 +48,17 @@ nav {
     }
     .menu {
       @apply flex gap-2 font-bold font-mono;
+      & div {
+        @apply py-2;
+      }
       &-item {
         @apply rounded-full px-2 py-1 hover:bg-blue-800 hover:text-slate-200;
       }
       &-login {
-        @apply rounded-full bg-blue-500 px-1 py-1 text-white hover:bg-red-500  hover:text-yellow-900;
+        @apply rounded-md bg-blue-500 px-1 py-1 text-white hover:bg-red-500  hover:text-yellow-900;
+      }
+      &-logout {
+        @apply rounded-md bg-blue-500  px-1 py-1 text-red-100 hover:bg-red-700;
       }
     }
   }
