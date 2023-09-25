@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import MainSite from '@/components/MainSite.vue'
-import LoginPage from '@/components/LoginPage.vue'
+import Login from '@/components/Login.vue'
 
-import NotFound from '@/components/NotFound.vue'
+import NotFound from '@/component/NotFound.vue'
 
 const routes = [
   { path: '/',  component: MainSite },
-  { path: '/login',  component: LoginPage },
+  { path: '/login',  component: Login },
 
   { path: '/:pathMatch(.*)*',  component: NotFound },
 ]
