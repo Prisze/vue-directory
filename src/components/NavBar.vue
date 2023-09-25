@@ -1,5 +1,9 @@
 <script setup>
   import { ref } from 'vue'
+
+  import { useAuth } from '@/composables/useAuth'
+  const { isAuthenticated, logout, user } = useAuth()
+  
     const title = ref('📓 Vue Directory')
 </script>
 
