@@ -9,28 +9,24 @@
 
 <template>
     <nav>
-      <div class = "wrapper">
+      <div class="wrapper">
         <RouterLink :to="{ name: 'Home' }" class="brand">
-          <span class ="brand-title">{{ title }}</span>
-        </RouterLink> 
-        
+          <span class="brand-title">{{ title }}</span>
+        </RouterLink>
         <div class="menu">
-            <a href="#" class="menu-item">Departments</a>
-          <a href="#" class="menu-item">Settings</a>
-          <a href="#" class="menu-login">Exit</a>
-          <p v-show="isAuthenticated" class="px-2 py-1">
-          Welcome back
-          <strong
-            ><i>{{ user.name }}</i></strong
-          >
-        </p>
-        <div v-if="isAuthenticated">
-          <RouterLink :to="{ name: 'Settings' }" href="#" class="menu-item">Settings</RouterLink>
-          <button class="menu-logout" @click="logout">Logout</button>
-        </div>
-        <div v-else>
-          <RouterLink :to="{ name: 'Login' }" href="#" class="menu-login">Login</RouterLink>
-        </div>
+          <p v-show="isAuthenticated" class="px-2 py-4">
+            Welcome
+            <strong
+              ><i>{{ user.name }}</i></strong
+            >
+          </p>
+          <div v-if="isAuthenticated">
+            <RouterLink :to="{ name: 'Settings' }" href="#" class="menu-item">Settings</RouterLink>
+            <button class="menu-logout" @click="logout">Logout</button>
+          </div>
+          <div v-else>
+            <RouterLink :to="{ name: 'Login' }" href="#" class="menu-login">Login</RouterLink>
+          </div>
         </div>
       </div>
     </nav>
