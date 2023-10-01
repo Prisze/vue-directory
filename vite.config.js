@@ -6,11 +6,11 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base:'/deploying-vue-directory',
   plugins: [vue()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
-  },
-  base:'/deploying-vue-directory'
+  }  
 })
