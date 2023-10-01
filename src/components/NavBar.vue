@@ -4,7 +4,7 @@
   import { useAuth } from '@/composables/useAuth'
   const { isAuthenticated, logout, user } = useAuth()
 
-    const title = ref('📓 Vue Directory')
+    const title = ref( import.meta.env.VITE_APP_NAME)
 </script>
 
 <template>
